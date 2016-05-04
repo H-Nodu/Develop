@@ -46,6 +46,15 @@ http://raining.bear-life.com/jquery/ajax%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%
 ◆jQueryとPHPでAJAX通信を行う
 http://kihon-no-ki.com/jquery-php-ajax
 
-
-
-
+◆Memo: MariaDBのインストール/初期設定
+http://qiita.com/akito1986/items/98a8430d936b293cb354
+CREATE USER h_noda;
+CREATE DATABASE DB_noda DEFAULT CHARACTER SET utf8;
+USE DB_noda;
+CREATE TABLE CardInfo (
+  CardID nchar(6),
+  CustomerID nchar(5),
+  IssueDate datetime,
+  ExpireDate datetime,
+  EmployeeID int
+);
