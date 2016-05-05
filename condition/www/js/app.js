@@ -28,11 +28,10 @@
 
 
 function kakunin(){
+/**/    
   ret = confirm("Yahoo!Japanへ飛びます。宜しいですか？");
   if (ret == true){
-    //location.href = "http://www.yahoo.co.jp/";
-    //var day = $('input[name=date]').val();//インプット欄の日付を取得
-      var day = new Date(); 
+      var day = new Date();
       
     $.ajax({
       type: 'POST',
@@ -43,6 +42,8 @@ function kakunin(){
       },
       success:function(data) {
         alert(data);
+        //location.href = "http://www.yahoo.co.jp/";
+        location.href = "test.html";
       },
       error:function(XMLHttpRequest, textStatus, errorThrown) {
         alert('Error : ' + errorThrown);
@@ -50,21 +51,12 @@ function kakunin(){
       }
     });      
       
-/*
-    $.ajax({
-      type: 'POST',
-      dataType:'json',
-      url:'api.php',
-      data:{
-        item:day
-      },
-      success:function(data) {
-        alert(data);
-      },
-      error:function(XMLHttpRequest, textStatus, errorThrown) {
-        alert("err");
-      }
-    });      
-*/
   }
+/**/
 }        
+
+
+
+function loadHello(){
+  alert("Hello!");
+}
