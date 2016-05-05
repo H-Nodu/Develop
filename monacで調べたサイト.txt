@@ -18,9 +18,10 @@ http://itinfo.d-easy.jp/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83/post-273
 
 ◆Git
 http://www.hivelocity.co.jp/blog/34364
-
+===========
 git config —global user.name noda
 git config —global user.email grow.noda@gmail.com
+===========
 
 ◆Mac で Git するなら SourceTree がオススメ
 http://tande.jp/lab/2012/08/1870
@@ -32,11 +33,17 @@ https://github.com/Oktasuke/monacaProject/wiki/Monaca%E3%82%92%E4%BD%BF%E3%81%A3
 
 ◆SSHの公開鍵を作成しGithubに登録する手順
 http://monsat.hatenablog.com/entry/generating-ssh-keys-for-github
+===========
 ssh-keygen -t rsa -C grow.noda@gmail.com
+===========
 
 ◆GitでoriginのhttpsをSSHに変更する
 https://weeksii.wordpress.com/2014/06/18/git%E3%81%A7origin%E3%81%AEhttps%E3%82%92ssh%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/
+===========
+cd /Applications/MAMP/htdocs/Develop/
+git remote -v
 git remote set-url origin git@github.com:H-Nodu/Develop.git
+===========
 
 
 ◆jQuery：Ajaxを使用してPOST送信でデータ取得
@@ -53,7 +60,9 @@ http://program-study.hatenablog.com/entry/20130110/1357826840
 
 ◆MAMPのMySQLをコマンドラインで操作 - Macターミナル - MAMPの使い方
 http://webkaru.net/mysql/mamp-command-line/
+===========
 rootは初期パスワード「root」
+===========
 
 ◯テーブル作成
 CREATE TABLE `condition`.`user` 
@@ -66,3 +75,19 @@ CREATE TABLE `condition`.`user`
 ◯ユーザー作成
 create user noda@localhost identified by 'Hiroaki0809';
 select User,Host from mysql.user;
+
+◯テーブル作成
+CREATE TABLE `condition`.`girl_lists` ( `id` INT(10) NOT NULL , `bust` INT(3) NULL , `west` INT(3) NULL , `hip` INT(3) NULL , `name` TEXT NULL , `tail` INT(3) NULL , PRIMARY KEY (`id`(10))) ENGINE = InnoDB;
+
+◆MySQLへ接続(php)
+http://www.phpbook.jp/tutorial/pdo/index3.html
+
+
+◆【PHP】MySQLに保存しているデータをJSONで吐き出す
+http://qiita.com/fantm21/items/891192da1a095e94c9e1
+
+◆jQueryのajaxでdataTypeをjsonにしてみたら
+http://starzero.hatenablog.com/entry/20110201/1296567920
+
+◆◆PHPからMySQLのデータをJSON形式で出力してjQueryとAjax通信を使って取得して表示するサンプル
+http://webcake.no003.info/webdesign/jquery-ajax-php-json-sample.html
