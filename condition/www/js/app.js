@@ -28,10 +28,8 @@
 
 
 function kakunin(){
-/**/    
-  ret = confirm("Yahoo!Japanへ飛びます。宜しいですか？");
-  if (ret == true){
-      var day = new Date();
+
+    var day = new Date();
       
     $.ajax({
       type: 'POST',
@@ -41,20 +39,14 @@ function kakunin(){
         item:day
       },
       success:function(data) {
-        alert(data);
-        //location.href = "http://www.yahoo.co.jp/";
-
         // 画面遷移
-        location.href = "test.html";
+        location.href = "menu.html";
       },
       error:function(XMLHttpRequest, textStatus, errorThrown) {
         alert('Error : ' + errorThrown);
           //console.log(XMLHttpRequest.responseText);
       }
     });      
-      
-  }
-/**/
 }        
 
 function loadHello(){
@@ -84,4 +76,9 @@ function loadHello(){
         console.log(XMLHttpRequest.responseText);
       }
     });            
+}
+
+
+function hoge(){
+    location.href = "report.html";
 }

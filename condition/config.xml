@@ -4,7 +4,7 @@
   <description/>
   <author/>
 <!--  <content src="index.html"/>-->
-  <content src="hoge.html"/>
+  <content src="login.html"/>
   <access origin="*"/>
   <allow-navigation href="*"/>
   <allow-intent href="itms:*"/>
