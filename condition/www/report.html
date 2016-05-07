@@ -1,24 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-<!--    
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <link rel="stylesheet" href="components/loader.css">
-    <script src="components/loader.js"></script>
-    <script>
-        //
-        // TODO: Write JavaScript code here
-    </script>
-    <script type="text/javascript" src="./js/app.js">
-    </script>    
-</head>
-<body>
-    <a>test.html</a>
-</body>
--->
-
 <head>    
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -28,13 +9,18 @@
 <title>JavaScript テスト</title>
 <script type="text/javascript" src="./js/app.js">
 </script>
+    
+<script src="js/jquery.min.js"></script>
+<script src="js/handsontable.full.js"></script>
+<link rel="stylesheet" media="screen" href="css/handsontable.full.css">
+    
 </head>
 <body onLoad="loadHello()">
-
-<!--DBからデータ取得した結果を表示-->
-<h1>jQuery & Ajax通信を使ってPHPからJSON形式のデータを取得して表示するサンプル</h1>
-<!--<ul id="content"></ul>-->
-<table id="articletable">
+<div class="navigation-bar">
+  <div class="navigation-bar__center">Menu</div>
+</div>
+    
+<div id="example" class="handsontable"></div>    
 
 </table>    
 </body>
