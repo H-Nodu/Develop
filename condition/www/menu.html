@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
 <link rel="stylesheet" href="components/loader.css">
+<link rel="stylesheet" href="css/menu.css">
+    
 <script src="components/loader.js"></script>
 <title>menu</title>
 <script type="text/javascript" src="./js/app.js">
@@ -12,10 +15,33 @@
 </head>
 <body>
 
-<!--DBからデータ取得した結果を表示-->
-<h1>menu</h1>
-    <input type="button" value="レポート入力" onClick="hoge()">
-    <input type="button" value="個人レポート(sample)" onClick="hoge2()">
-    <input type="button" value="全体レポート" onClick="hoge()">
+<div class="navigation-bar">
+  <div class="navigation-bar__center">Menu</div>
+</div>
+
+<div class="profile-card">
+    <img src="images/profile-image-01.png" class="profile-image">
+    <div class="profile-name">Dave Graham</div>
+    <div class="profile-id">@davegraham</div>
+    <div class="profile-desc">Freelance designer, software engineer and cyclist</div>
+</div>
+
+<br>
+<br>
+<br>
+    
+<ul class="list">
+  <li class="list__item list__item--chevron" onClick="hoge()">
+    レポート入力
+  </li>
+  <li class="list__item list__item--chevron">
+    個人レポート(sample2)
+  </li>
+  <li class="list__item list__item--chevron">
+    全体レポート
+  </li>
+</ul>
+    
 </body>
+    
 </html>

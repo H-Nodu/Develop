@@ -98,3 +98,10 @@ http://webkaru.net/jquery-plugin/handsontable/
 ◆「Handsontable」で Web上にテーブルを作成
 https://cloudear.jp/blog/?p=483
 
+◆部品作り（ONSENUI）
+http://components.onsen.io/
+
+◆部品作り（ONSENUI）
+http://ja.onsen.io/reference/ons-carousel.html
+
+
