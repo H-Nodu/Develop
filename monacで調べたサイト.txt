@@ -89,5 +89,9 @@ http://qiita.com/fantm21/items/891192da1a095e94c9e1
 ◆jQueryのajaxでdataTypeをjsonにしてみたら
 http://starzero.hatenablog.com/entry/20110201/1296567920
 
-◆◆PHPからMySQLのデータをJSON形式で出力してjQueryとAjax通信を使って取得して表示するサンプル
+◆PHPからMySQLのデータをJSON形式で出力してjQueryとAjax通信を使って取得して表示するサンプル
 http://webcake.no003.info/webdesign/jquery-ajax-php-json-sample.html
+
+◆ExcelのようにTableが編集できちゃう「Handsontable」
+http://webkaru.net/jquery-plugin/handsontable/
+

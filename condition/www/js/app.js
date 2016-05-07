@@ -61,24 +61,32 @@ function loadHello(){
         item:day
       },
       success:function(data, dataType) {
+          
         //結果が0件の場合
-        if(data == null) alert('データが0件でした');
-
-        //返ってきたデータの表示
-        var $content = $('#content');
-        for (var i =0; i<data.length; i++) 
-        {
-            $content.append("<li>" + data[i].name + "</li>");
-        }          
+        if(data == null){
+            alert('データが0件でした');
+        } 
+          
+        for (var i =0; i<data.length; i++){           
+            $("#articletable").append(
+                $("<tr></tr>")
+                    .append($("<th></th>").text(data[i].id))
+                    .append($("<td></td>").text(data[i].name))
+            );
+        }
       },
       error:function(XMLHttpRequest, textStatus, errorThrown) {
         alert('Error : ' + errorThrown);
         console.log(XMLHttpRequest.responseText);
       }
     });            
-}
 
+}
 
 function hoge(){
     location.href = "report.html";
+}
+
+function hoge2(){
+    location.href = "sample.html";
 }
