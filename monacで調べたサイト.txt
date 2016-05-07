@@ -95,3 +95,6 @@ http://webcake.no003.info/webdesign/jquery-ajax-php-json-sample.html
 ◆ExcelのようにTableが編集できちゃう「Handsontable」
 http://webkaru.net/jquery-plugin/handsontable/
 
+◆「Handsontable」で Web上にテーブルを作成
+https://cloudear.jp/blog/?p=483
+
