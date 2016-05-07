@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <link rel="stylesheet" href="components/loader.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hoge.css">
     <script src="components/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
         //
-
+/*
         $(function() {
             $(".nav").css("display","none");
             $(".menu_button").on("click", function() {
                 $(".nav").slideToggle();
             });
         });        
+*/        
+        
+        $(function(){
+            $(".menu-btn").click(function(){
+                $("#menu-list").slideToggle(300);
+            });
+        });        
+        
+        
         // TODO: Write JavaScript code here
     </script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -26,13 +36,21 @@
     <!-- TODO: Please edit here -->   
 
 <header>
-    <div class="menu_button"><span>menu</span></div>
-    <nav class="nav">
-        <ul>
-            <li>メニュー１</li>
-            <li>メニュー２</li>
-            <li>メニュー３</li>
+    <!-- menu buttom -->
+    <p class="menu-btn"><img class="menuIcon" src="img/common/menu.jpg" alt="" width="30"></p>
+
+    <!-- menu list -->
+    <nav id="menu-list">
+      <div class="menu-list-inner">
+       <ul class="lists clearfix">
+         <li><a href="menu1.html">メニュー１</a></li>
+         <li><a href="menu2.html">メニュー２</a></li>
+         <li><a href="menu3.html">メニュー３</a></li>
+         <li><a href="menu4.html">メニュー４</a></li>
+         <li><a href="menu5.html">メニュー５</a></li>
         </ul>
+      </div>
+      <p class="list-close menu-btn" title="close">閉じる</p>
     </nav>
 </header>
 <main>
