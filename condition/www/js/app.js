@@ -83,9 +83,10 @@ function hoge(){
 }
 
 function hoge2(){
-    location.href = "report.html";
+    location.href = "chart.html";
 }
 
 function hoge3(){
-    location.href = "report.html";
+    //location.href = "report.html";
+    location.href = "chart.html";
 }
