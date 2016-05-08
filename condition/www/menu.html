@@ -1,46 +1,51 @@
-<!DOCTYPE HTML>
-<html>
-<head>    
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-<link rel="stylesheet" href="components/loader.css">
-<script src="components/loader.js"></script>    
-<link rel="stylesheet" href="css/menu.css">
+<!DOCTYPE html>
+<html lang="en" class="bg-OrginalPurple">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sandbox: Drawer Left</title>
+    <link href="./css/sandbox.css" rel="stylesheet">
+    <link href="./css/drawer.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/app.js"></script>
     
-<title>menu</title>
-<script type="text/javascript" src="./js/app.js">
-</script>
 </head>
-<body>
+<body class="drawer drawer--left">
 
-<div class="navigation-bar">
-  <div class="navigation-bar__center">Menu</div>
-</div>
+  <header role="banner">
+    <button type="button" class="drawer-toggle drawer-hamburger">
+      <span class="sr-only">toggle navigation</span>
+      <span class="drawer-hamburger-icon"></span>
+    </button>
 
-<div class="profile-card">
-    <img src="images/profile-image-01.png" class="profile-image">
-    <div class="profile-name">Dave Graham</div>
-    <div class="profile-id">@davegraham</div>
-    <div class="profile-desc">Freelance designer, software engineer and cyclist</div>
-</div>
+    <nav class="drawer-nav" role="navigation">
+      <ul class="drawer-menu">
+        <li><a class="drawer-brand">Menu</a></li>
+        <li><a class="drawer-menu-item" onClick="hoge()">レポート入力</a></li>
+        <li><a class="drawer-menu-item" onClick="hoge2()">個人レポート</a></li>
+        <li><a class="drawer-menu-item" onClick="hoge3()">全体レポート</a></li>
+        <li style="height:500px"><span class="drawer-menu-item" >height:500px box</span></li>
+        <li><span class="drawer-menu-item" >box end</span></li>
+      </ul>
+    </nav>
+  </header>
 
-<br>
-<br>
-<br>
-    
-<ul class="list">
-  <li class="list__item list__item--chevron" onClick="hoge()">
-    レポート入力
-  </li>
-  <li class="list__item list__item--chevron" onClick="hoge2()">
-    個人レポート(sample2)
-  </li>
-  <li class="list__item list__item--chevron"  onClick="hoge3()">
-    全体レポート
-  </li>
-</ul>
-    
+  <!-- content -->
+  <main role="main">
+    <section class="item">
+      <h1>Condition Manager</h1>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+  <script src="./js/drawer.min.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(function() {
+      $('.drawer').drawer();
+    });
+  </script>
+
 </body>
-    
 </html>
