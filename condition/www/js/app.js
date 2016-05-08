@@ -12,7 +12,7 @@ function kakunin(){
       },
       success:function(data) {
         // 画面遷移
-        location.href = "menu.html";
+        location.href = "menu.html?key=1";
       },
       error:function(XMLHttpRequest, textStatus, errorThrown) {
         alert('Error : ' + errorThrown);
