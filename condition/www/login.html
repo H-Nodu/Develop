@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
+
     <script src="components/loader.js"></script>
     <script>
         //
@@ -15,12 +16,32 @@
     </script>
 </head>
 <body>
-
-<input type="text" class="text-input--underbar" placeholder="text" value="">
+    
+  <main role="main">
+    <section class="item">
+      <h3 align="center">Login</h1>
+    </section>
+  </main>
+    
+<div class="foo">     
+<p align="left">ID</p>    
+<div class="button_wrapper">
+<input type="text" class="text-input--underbar hoge" placeholder="IDを入力して下さい" value="" maxlength="10">
+</div>
+</div>    
 <br>
-<input type="text" class="text-input--underbar" placeholder="text" value="">
+<div class="foo">     
+<p align="left">パスワード</p>    
+<div class="button_wrapper">
+<input type="text" class="text-input--underbar hoge" placeholder="パスワードを入力して下さい" value="" maxlength="10">
+</div>
+</div>
 <br>
+<div class="button_wrapper foo">
 <button class="button button--large" onClick="kakunin()">login</button>    
+</div>    
+
+<h6 align="center">ver.0.03</h1>
     
 </body>
 </html>

@@ -1,0 +1,16 @@
+canvas {
+  height: auto;
+  width: 50%;
+}
+.line_canvas {
+  height: auto;
+  width: 60%;
+}
+.bar_canvas {
+  height: auto;
+  width: 60%;
+}
+.radar_canvas {
+  height: auto;
+  width: 60%;
+}

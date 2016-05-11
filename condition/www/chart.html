@@ -5,6 +5,7 @@
 <title>Line Chart</title>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/chart.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <script>
@@ -36,28 +37,42 @@ var lineChartData = {
 };
 */
 var data = {
- labels: ["1月","2月","3月","4月","5月","6月","7月"],//X軸のラベル
+/*    
+ labels: ["1","2","3","4","5","6","7","8","9","10",
+          "11","12","13","14","15","16","17","18","19","20",
+          "21","22","23","24","25","26","27","28","29","30"
+          ],//X軸のラベル
+*/          
+ labels: ["1","2","3","4","5","6","7","8","9","10"
+          ],//X軸のラベル
  datasets: [
   {
-   label: "My First dataset",//項目名
-   fillColor: "rgba(220,220,220,0.2)",//塗りつぶす色
-   strokeColor: "rgba(220,220,220,1)",//線の色
-   pointColor: "rgba(220,220,220,1)",//値の点を塗りつぶす色
-   pointStrokeColor: "#fff",//値の点の枠線の色
-   pointHighlightFill: "#fff",//マウスオーバー時値の点を塗りつぶす色
-   pointHighlightStroke: "rgba(220,220,220,1)",//マウスオーバー時値の点の枠線を塗りつぶす色
-   data: [65, 59, 80, 81, 56, 55, 40]//値
+    label: "体重",//項目名
+    fillColor : "rgba(255,255,255,0)",
+    strokeColor : "rgba(151,187,205,1)",
+    pointColor : "rgba(151,187,205,1)",
+    pointStrokeColor : "#fff",
+    data: [63, 60.3, 60.2, 60.3, 60.5, 60.3, 59.3]//値
+  }
+/*     
   },
   {
-   label: "My First dataset",//項目名
-   fillColor: "rgba(220,220,220,0.2)",//塗りつぶす色
-   strokeColor: "rgba(220,220,220,1)",//線の色
-   pointColor: "rgba(220,220,220,1)",//値の点を塗りつぶす色
-   pointStrokeColor: "#fff",//値の点の枠線の色
-   pointHighlightFill: "#fff",//マウスオーバー時値の点を塗りつぶす色
-   pointHighlightStroke: "rgba(220,220,220,1)",//マウスオーバー時値の点の枠線を塗りつぶす色
-   data: [165, 159, 180, 181, 156, 155, 140]//値
+    label: "体温",//項目名
+    fillColor : "rgba(255,255,255,0)",
+    strokeColor : "rgba(151,187,205,1)",
+    pointColor : "rgba(200,120,210,1)",
+    pointStrokeColor : "#fff",
+    data: [36.0, 36.2, 36.4, 37.0, 36.8, 36.3, 36.1]//値
+  },
+  {
+   label: "心拍数",//項目名
+   fillColor: "rgba(255,255,255,0)",  //塗りつぶす色
+   strokeColor: "rgba(110,220,220,1)",  //線の色
+   pointColor: "rgba(100,220,220,1)",   //値の点を塗りつぶす色
+   pointStrokeColor: "#fff",            //値の点の枠線の色
+   data: [120, 130, 120, 110, 120, 120, 120]//値
   }
+*/  
  ]
 };
  
@@ -85,6 +100,7 @@ window.onload = function(){
 	//	１秒ごとに繰り返し
 	setTimeout("mycheck()",1000);
 */
+
     var myChart = new Chart(document.getElementById("mycanvas").getContext("2d")).Line(data,{responsive:true});    
 }
     
@@ -119,11 +135,17 @@ window.onload = function(){
 </head>
 
 <body>
-<div style="width: 50%">
+<!--    
+<div style="width: 100%">
+-->
+<div class="line_canvas">    
 <!--    
 	<canvas id="canvas" height="450" width="600"></canvas>
 -->
-    <canvas id="mycanvas" height="3" width="2"></canvas>    
+    <canvas id="mycanvas" style="width: 30%; height: 80%;"></canvas>    
+<!--    
+    <canvas id="mycanvas" height="200" width="200"></canvas>    
+-->
 </div>
 
 <!--    
