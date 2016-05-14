@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+    
 <head>
 <meta charset="utf-8">
 <title>Line Chart</title>    
@@ -8,41 +9,22 @@
 <link rel="stylesheet" href="css/chart.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+        
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<link href='./css/tabulous.css' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="./js/tabulous.js"></script>
+<script type="text/javascript" src="./js/js.js"></script>
+    
 <script>
 //==============================//
 //	データ			//
 //==============================//
 var	datapos = 10;
 var	onoff=1;
-/*    
-var lineChartData = {
-	labels : ["1番目","2番目","3番目","4番目","5番目","6番目","7番目","8番目","9番目","10番目"],
-	bezierCurve: false,
-	datasets : [
-		{
-			label: "1本目",
-			fillColor : "rgba(255,255,255,0.2)",
-			strokeColor : "red",
-			pointColor : "red",
-			data : []
-		},
-		{
-			label: "2本目",
-			fillColor : "rgba(255,255,255,0.2)",
-			strokeColor : "blue",
-			pointColor : "blue",
-			data : []
-		}
-	]
-};
-*/
-var data = {
-/*    
- labels: ["1","2","3","4","5","6","7","8","9","10",
-          "11","12","13","14","15","16","17","18","19","20",
-          "21","22","23","24","25","26","27","28","29","30"
-          ],//X軸のラベル
-*/          
+var data1 = {
  labels: ["1","2","3","4","5","6","7","8","9","10"
           ],//X軸のラベル
  datasets: [
@@ -54,104 +36,101 @@ var data = {
     pointStrokeColor : "#fff",
     data: [63, 60.3, 60.2, 60.3, 60.5, 60.3, 59.3]//値
   }
-/*     
-  },
+ ]
+};
+
+var data2 = {
+ labels: ["1","2","3","4","5","6","7","8","9","10"
+          ],//X軸のラベル
+ datasets: [
+  {
+    label: "睡眠の質",//項目名
+    fillColor : "rgba(255,255,255,0)",
+    strokeColor : "rgba(151,187,205,1)",
+    pointColor : "rgba(151,187,205,1)",
+    pointStrokeColor : "#fff",
+    data: [77, 0, 60, 30, 40, 60, 100]//値
+  }
+ ]
+};
+    
+var data3 = {
+ labels: ["1","2","3","4","5","6","7","8","9","10"
+          ],//X軸のラベル
+ datasets: [
   {
     label: "体温",//項目名
     fillColor : "rgba(255,255,255,0)",
     strokeColor : "rgba(151,187,205,1)",
-    pointColor : "rgba(200,120,210,1)",
+    pointColor : "rgba(151,187,205,1)",
     pointStrokeColor : "#fff",
-    data: [36.0, 36.2, 36.4, 37.0, 36.8, 36.3, 36.1]//値
-  },
-  {
-   label: "心拍数",//項目名
-   fillColor: "rgba(255,255,255,0)",  //塗りつぶす色
-   strokeColor: "rgba(110,220,220,1)",  //線の色
-   pointColor: "rgba(100,220,220,1)",   //値の点を塗りつぶす色
-   pointStrokeColor: "#fff",            //値の点の枠線の色
-   data: [120, 130, 120, 110, 120, 120, 120]//値
+    data: [37.0, 36.8, 36.5, 36.9, 37.2, 36.5, 36.4]//値
   }
-*/  
  ]
 };
- 
+    
+    
 //==============================//
 //	開始時処理		//
 //==============================//
 window.onload = function(){
 
-/*    
-	//	初期データセット
-	for(i=0 ; i < lineChartData.datasets.length ; i ++)
-	{
-		for(j=0;j< datapos;j++)
-		{
-			lineChartData.datasets[i].data[j] =  Math.round(Math.random()*100);
-		}
-	}
+		var myChart = {};
 
-	//	チャート生成
-	var ctx = document.getElementById("canvas").getContext("2d");
-	window.myChart = new Chart(ctx).Line(lineChartData, {
-		responsive : true
-	});
+        myChart['#tabs-1'] = new Chart(document.getElementById("mycanvas1").getContext("2d")).Line(data1,{responsive:true});        
 
-	//	１秒ごとに繰り返し
-	setTimeout("mycheck()",1000);
-*/
+        myChart['#tabs-2'] = new Chart(document.getElementById("mycanvas2").getContext("2d")).Line(data2,{responsive:true});        
+    
+        myChart['#tabs-3'] = new Chart(document.getElementById("mycanvas3").getContext("2d")).Line(data1,{responsive:true});        
 
-    var myChart = new Chart(document.getElementById("mycanvas").getContext("2d")).Line(data,{responsive:true});    
+        //タブ切り替えの処理と同時に地図の再描画もおこなう
+		$('#tabs2 a[href^="#panel"]').click(function(){
+			$("#tabs .panel").hide();
+			$(this.hash).fadeIn();
+            
+			google.maps.event.trigger(maps[this.hash], 'resize');
+			return false;
+		});
+
+//    //1つ目を表示させておく
+//		$('#tabs2 a[href^="#tabs_container"]:eq(0)').trigger('click');    
 }
     
-/*
-//==============================//
-//	開始時処理		//
-//==============================//
-window.onload = function(){
-
-	//	初期データセット
-	for(i=0 ; i < lineChartData.datasets.length ; i ++)
-	{
-		for(j=0;j< datapos;j++)
-		{
-			lineChartData.datasets[i].data[j] =  Math.round(Math.random()*100);
-		}
-	}
-
-	//	チャート生成
-	var ctx = document.getElementById("canvas").getContext("2d");
-	window.myChart = new Chart(ctx).Line(lineChartData, {
-		responsive : true
-	});
-
-	//	１秒ごとに繰り返し
-	setTimeout("mycheck()",1000);
-
-}
-*/
-
 </script>
 </head>
 
 <body>
-<!--    
-<div style="width: 100%">
--->
-<div class="line_canvas">    
-<!--    
-	<canvas id="canvas" height="450" width="600"></canvas>
--->
-    <canvas id="mycanvas" style="width: 30%; height: 80%;"></canvas>    
-<!--    
-    <canvas id="mycanvas" height="200" width="200"></canvas>    
--->
-</div>
+<div id="wrapper">
+    <div id="tabs2">
+        <ul>
+            <li><a href="#tabs-1" title="">体重</a></li>
+            <li><a href="#tabs-2" title="">睡眠の質</a></li>
+            <li><a href="#tabs-3" title="">体温</a></li>
+        </ul>
 
-<!--    
-<button onclick="stopsw()">グラフ追加／停止切り替え</button>
+        <div id="tabs_container">
+            <div id="tabs-1">
+<!--                
+                    <canvas id="mycanvas1" style="width:300px; height:300px;"></canvas>    
 -->
-    
+                    <canvas id="mycanvas1" style="width:100%; height:auto;"></canvas>    
+            </div>
+            <div id="tabs-2">
+<!--                
+                    <canvas id="mycanvas2" style="width:300px; height:300px;"></canvas>    
+-->
+                    <canvas id="mycanvas2" style="width:100%; height:auto;"></canvas>    
+            </div>
+            <div id="tabs-3">
+<!--                
+                    <canvas id="mycanvas3" style="width:300px; height:300px;"></canvas>    
+-->
+                    <canvas id="mycanvas3" style="width:100%; height:auto"></canvas>    
+            </div>
+
+        </div><!--End tabs container-->
+    </div><!--End tabs-->
+</div>    
 </body>
 
 </html>
